@@ -17,8 +17,6 @@ font-family: 'Red Hat Display', sans-serif;
     font-family: "Red Hat Display", sans-serif;
     color: var(--white);
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: var(--rojo) var(--naranja);
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -42,6 +40,8 @@ font-family: 'Red Hat Display', sans-serif;
     border-radius: 10px;
     border: 3px none #ffffff;
 }
+
+/*=====ESTILOS HEADINGS=====*/
 
 h1 {
     font-size: 100px;
@@ -67,7 +67,7 @@ p {
     font-size: 60px;
     color: var(--naranja);
     font-weight: 900;
-    padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 /*=====NAV BAR=====*/
@@ -170,8 +170,11 @@ p {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    border-bottom: 8px solid var(--white);
     padding: 0 40px;
+}
+
+.about-me-divider {
+    border-bottom: 8px solid var(--white);
 }
 
 .about-me_quote {
@@ -207,7 +210,7 @@ p {
     display: flex;
     max-width: 800px;
     flex-wrap: wrap;
-    justify-content: center;
+    
 }
 
 .card {
@@ -215,8 +218,8 @@ p {
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid var(--white);
-    width: 240px;
-    height: 150px;
+    width: 10vw;
+    height: 5vw;
     padding: 20px 20px;
     border-radius: 20px;
     margin: 10px;
@@ -366,7 +369,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    height: 40vw;
     background-image: url("./assets/fondo.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -384,8 +387,6 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 400px;
-    min-width: 400px;
 }
 
 .field {
@@ -395,7 +396,7 @@ p {
 #name,
 #phone,
 #email {
-    width: 100%;
+    width: 40vw;
     height: 35px;
     border: none;
     border-radius: 20px;
@@ -406,8 +407,8 @@ p {
 }
 
 #message {
-    max-width: 100%;
-    max-height: 120px;
+    max-width: 40vw;
+    max-height: 10vw;
     border: none;
     border-radius: 20px;
     padding-top: 10px;
@@ -460,7 +461,6 @@ p {
 }
 
 .submit_button {
-    border: none;
     background-color: var(--naranja);
     padding: 10px 20px;
     border-radius: 20px;
@@ -507,4 +507,195 @@ p {
     align-items: center;
     height: 30px;
     padding: 0 20px;
+}
+
+/* =====FOOTER===== */
+
+@media screen and (max-width: 1024px) {
+    
+    * {
+        overflow-x: hidden;
+    }
+
+    /*=====NAV BAR=====*/
+    .navbar {
+        display: flex;
+        width: 100vw;
+        background-color: var(--grey);
+        justify-content: space-between;
+        padding: 10px 40px;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.753);
+        z-index: 100;
+        top: 0;
+    }
+    
+    /*=====CONTENT=====*/
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .personal {
+        width: 100vw;
+        max-height: 70vw;
+        background-color: var(--naranja);
+    }
+
+    .image-profile {
+        background-image: url("./assets/personal.jpg");
+        width: 100vw;
+        height: 70vw;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-position: top;
+        filter: grayscale(100%);
+        mix-blend-mode: luminosity;
+    }
+
+    .data {
+        width: 100vw;
+        height: auto;
+        overflow-y: visible;
+        background-color: var(--darkgrey);
+    }
+
+    .data_hide {
+        display: none;
+    }
+
+    .main_title {
+        overflow-y: hidden;
+    }
+
+    /*=====ABOUT ME=====*/
+
+    .about-me {
+        display: flex;
+        max-width: 800px;
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        margin: 40px auto;
+        padding: 0 40px;
+    }
+
+    .main_title, .about-me_quote {
+        text-align: center;
+    }
+    
+    .about-me-divider {
+        border-bottom: 8px solid var(--white);
+    }
+
+    .about-me_quote {
+        padding: 20px 0;
+        font-size: 30px;
+        font-style: italic;
+    }
+
+    .about-me_quote span {
+        font-size: 30px;
+    }
+
+    .about-me_text p {
+        padding: 10px 0;
+    }
+
+    /*=====STUDIES=====*/
+
+    .studies {
+        height: auto;
+        padding: 40px 40px;
+    }
+
+    .studies_card {
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .card {
+        min-width: 25vw;
+        height: 15vw;
+    }
+
+    .studies_card_year {
+        font-style: italic;
+    }
+
+    /*=====SKILLS=====*/
+
+    .skills {
+        height: auto;
+        padding: 40px 40px;
+    }
+
+    .skills_card {
+        margin: 0 auto;
+    }
+
+    .skills_ul {
+        justify-content: center;
+    }
+
+    /*=====EXP=====*/
+
+    .experience {
+        height: auto;
+    }
+
+    .experience_list {
+        margin: 0 auto;
+        max-width: 800px;
+        overflow-y: hidden;
+    }
+
+    /*=====HOBBIES=====*/
+
+    .hobbies {
+        height: auto;
+        padding: 40px 40px;
+    }
+
+    .hobbies_card {
+        margin: 0 auto;
+        max-width: 800px;
+        overflow-y: hidden;
+        justify-content: center;
+    }
+
+    /*=====CONTACT=====*/
+
+    .contact {
+        height: auto;
+        padding: 40px;
+    }
+
+    /* .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 40vw;
+        background-image: url("./assets/fondo.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0 40px;
+    }
+    
+    .form {
+        display: flex;
+        justify-content: center;
+        max-width: 800px;
+    }
+    
+    .form_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .field {
+        margin: 20px 0;
+    } */
 }
