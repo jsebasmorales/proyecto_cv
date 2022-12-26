@@ -6,6 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <title>Mi CV</title>
     </head>
     <body>
@@ -14,8 +21,12 @@
                 <div class="navbar_logo">
                     <a href="./index.html"><img src="./assets/isotipo.png" alt="" /></a>
                 </div>
-                <ul>
-                    <a href="#data">
+                <input type="checkbox" name="check" id="check" />
+                <label for="check" class="checkbtn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+                <ul class="navbar_items">
+                    <a href="#data" class="active">
                         <li>Sobre mi</li>
                     </a>
                     <a href="#studies">
@@ -36,11 +47,13 @@
                 </ul>
             </nav>
         </header>
+        <!-- CONTENT -->
         <section class="content">
             <section class="personal">
                 <div class="image-profile"></div>
             </section>
             <section class="data">
+                <!-- =====DATA===== -->
                 <section class="data_hide"></section>
                 <section class="about-me-divider">
                     <section class="about-me" id="data">
@@ -59,7 +72,6 @@
                         </section>
                     </section>
                 </section>
-
                 <!-- =====STUDIES===== -->
                 <section class="studies" id="studies">
                     <h2 class="section_title">Educación</h2>
@@ -92,7 +104,7 @@
                     <section class="skills_card">
                         <ul class="skills_ul">
                             <li>
-                                <div class="card">
+                                <div class="skills_card_1 card">
                                     <h3 class="skills_card_title">WordPress</h3>
                                     <p class="skills_card_text">Implementacion de sitios web usando consturctores como Elementor y Divi.</p>
                                     <div class="progress">
@@ -103,7 +115,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="card">
+                                <div class="skills_card_2 card">
                                     <h3 class="skills_card_title">Figma</h3>
                                     <p class="skills_card_text">Diseño de wireframes y mockups de sitios web, y landing pages.</p>
                                     <div class="progress">
@@ -114,7 +126,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="card">
+                                <div class="skills_card_3 card">
                                     <h3 class="skills_card_title">Introducción a AWS Cloud</h3>
                                     <p class="skills_card_text">Curso introductorio a AWS Cloud</p>
                                     <div class="progress">
@@ -125,7 +137,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="card">
+                                <div class="skills_card_4 card">
                                     <h3 class="skills_card_title">Fundamentos de UX & UI</h3>
                                     <p class="skills_card_text">Fundamentos de diseño UX & UI</p>
                                     <div class="progress">
@@ -188,19 +200,19 @@
                 <section class="hobbies" id="hobbies">
                     <h2 class="section_title">Hobbies</h2>
                     <section class="hobbies_card">
-                        <div class="hobbies_card_global card">
+                        <div class="hobbies_card_global uno card">
                             <img src="./assets/game-controller.png" alt="" class="hobbies_img" />
                             <h3 class="hobbies_card_title">Video Juegos</h3>
                         </div>
-                        <div class="hobbies_card_global card">
+                        <div class="hobbies_card_global dos card">
                             <img src="./assets/drama.png" alt="" class="hobbies_img" />
                             <h3 class="hobbies_card_title">Comedia</h3>
                         </div>
-                        <div class="hobbies_card_global card">
+                        <div class="hobbies_card_global tres card">
                             <img src="./assets/headset.png" alt="" class="hobbies_img" />
                             <h3 class="hobbies_card_title">Música</h3>
                         </div>
-                        <div class="hobbies_card_global card">
+                        <div class="hobbies_card_global cuatro card">
                             <img src="./assets/video.png" alt="" class="hobbies_img" />
                             <h3 class="hobbies_card_title">Cine</h3>
                         </div>

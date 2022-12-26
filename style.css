@@ -9,6 +9,7 @@ font-family: 'Red Hat Display', sans-serif;
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     --rojo: #e44f1e;
     --naranja: #f29700;
     --grey: #585d65;
@@ -16,7 +17,24 @@ font-family: 'Red Hat Display', sans-serif;
     --white: #ffffff;
     font-family: "Red Hat Display", sans-serif;
     color: var(--white);
+    font-size: 10px;
     scroll-behavior: smooth;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--white);
+    width: 240px;
+    height: 150px;
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 8px 1px rgba(228, 79, 30, 0.6);
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -44,33 +62,33 @@ font-family: 'Red Hat Display', sans-serif;
 /*=====ESTILOS HEADINGS=====*/
 
 h1 {
-    font-size: 100px;
+    font-size: 10rem;
     color: var(--naranja);
     line-height: 1;
     font-weight: 900;
 }
 h2 {
-    font-size: 36px;
+    font-size: 6rem;
     color: var(--naranja);
     font-weight: 900;
 }
 h3 {
-    font-size: 18px;
+    font-size: 1.8rem;
     color: var(--naranja);
     font-weight: 900;
 }
 p {
-    font-size: 17px;
+    font-size: 1.7rem;
 }
 
 .section_title {
-    font-size: 60px;
+    font-size: 6rem;
     color: var(--naranja);
     font-weight: 900;
     padding-bottom: 20px;
 }
 
-/*=====NAV BAR=====*/
+/*=====NAVBAR=====*/
 
 .navbar {
     display: flex;
@@ -104,6 +122,8 @@ p {
     color: var(--white);
     text-align: right;
     transition: 0.1s;
+    font-size: 1.7rem;
+    text-align: center;
 }
 
 .navbar li:hover {
@@ -121,9 +141,25 @@ p {
     scale: 1.1;
 }
 
+/*=====NAVBAR MOBILE=====*/
+.checkbtn {
+    cursor: pointer;
+    display: none;
+}  
+
+.checkbtn i {
+    font-size: 3rem;
+    color: var(--naranja);
+    line-height: 8rem;
+
+}
+
+#check {
+    display: none;
+}
+
 /*=====CONTENT=====*/
 
-/*=====IMAGE=====*/
 .content {
     display: flex;
     flex-direction: row;
@@ -170,8 +206,8 @@ p {
     max-width: 800px;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    padding: 0 40px;
+    height: auto;
+    padding: 40px 40px;
 }
 
 .about-me-divider {
@@ -198,36 +234,38 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
+    height: auto;
+    padding: 40px 40px;
     background-image: url("./assets/fondo.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 40px;
     border-bottom: 8px solid var(--white);
 }
 
 .studies_card {
-    display: flex;
+    display: grid;
     max-width: 800px;
-    flex-wrap: wrap;
-    
+    grid-template-areas: 
+    "uno  dos"
+    "tres cuatro";
+    justify-content: center;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid var(--white);
-    width: 10vw;
-    height: 5vw;
-    padding: 20px 20px;
-    border-radius: 20px;
-    margin: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(3px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 0px 8px 1px rgba(228, 79, 30, 0.6);
+.studies_card_1 {
+    grid-area: uno;
+}
+
+.studies_card_2 {
+    grid-area: dos;
+}
+
+.studies_card_3 {
+    grid-area: tres;
+}
+
+.studies_card_4 {
+    grid-area: cuatro;
 }
 
 .studies_card_year {
@@ -240,16 +278,17 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
-    padding: 0 40px;
+    height: auto;
+    padding: 40px 40px;
     border-bottom: 8px solid var(--white);
 }
 
 .skills_card ul {
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
+    justify-content: center;
     max-width: 800px;
+    list-style: none;
 }
 
 .progress {
@@ -287,7 +326,7 @@ p {
     position: absolute;
     top: -20px;
     right: 0px;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 /*=====EXP=====*/
@@ -296,18 +335,14 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    width: auto;
+    height: auto;
     background-image: url("./assets/fondo.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 80px 40px;
+    padding: 40px 40px;
     border-bottom: 8px solid var(--white);
-}
-
-.experience_list {
-    max-width: 800px;
-    overflow-y: auto;
 }
 
 .experience_item {
@@ -320,17 +355,17 @@ p {
     font-weight: 700;
     padding: 0 20px;
     border-right: 1px solid var(--white);
-    width: 5vw;
+    width: 10vw;
 }
 
 .experience_corp {
     padding: 0 20px;
-    width: 8vw;
+    width: 15vw;
 }
 
 .experience_description {
     padding-right: 20px;
-    width: 30vw;
+    width: 60vw;
 }
 
 /*=====HOBBIES=====*/
@@ -339,17 +374,36 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
-    padding: 80px 40px;
+    height: auto;
+    padding: 40px 40px;
     border-bottom: 8px solid var(--white);
 }
 
 .hobbies_card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
     max-width: 800px;
+    justify-content: center;
+    grid-template-areas: 
+    "uno dos"
+    "tres cuatro";    
 }
+
+.uno {
+    grid-area: uno;
+}
+
+.dos {
+    grid-area: dos;
+}
+
+.tres {
+    grid-area: tres;
+}
+
+.cuatro {
+    grid-area: cuatro;
+}
+
 
 .hobbies_card_global {
     display: flex;
@@ -359,8 +413,8 @@ p {
 }
 
 .hobbies_img {
-    width: 120px;
-    height: 120px;
+    width: 5vw;
+    height: 5vw;
 }
 
 .hobbies_card_title {
@@ -373,34 +427,28 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 40vw;
+    height: auto;
     background-image: url("./assets/fondo.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 40px;
-}
-
-.form {
-    display: flex;
-    justify-content: center;
-    max-width: 800px;
+    padding: 40px 40px;
 }
 
 .form_container {
     display: flex;
-    flex-direction: column;
+    max-width: 800px;
     justify-content: center;
 }
 
-.field {
-    margin: 20px 0;
+.field input {
+    width: 380px;
+    margin: 10px 0;
 }
 
 #name,
 #phone,
 #email {
-    width: 40vw;
     height: 35px;
     border: none;
     border-radius: 20px;
@@ -411,8 +459,8 @@ p {
 }
 
 #message {
-    max-width: 40vw;
-    max-height: 10vw;
+    width: 380px;
+    margin: 10px 0;
     border: none;
     border-radius: 20px;
     padding-top: 10px;
@@ -469,12 +517,12 @@ p {
     padding: 10px 20px;
     border-radius: 20px;
     transition: 0.2s;
-    font-size: 18px;
     font-weight: 400;
 }
 
 .submit_button a {
     text-decoration: none;
+    font-size: 1.8rem;
 }
 
 .submit_button:hover {
@@ -490,8 +538,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 40px;
     max-width: 800px;
+    padding-top: 40px;
 }
 
 .contact_rrss img {
@@ -513,13 +561,9 @@ p {
     padding: 0 20px;
 }
 
-/* =====FOOTER===== */
+/*=====MEDIA 1048px=====*/
+@media screen and (max-width: 1048px) {
 
-@media screen and (max-width: 1024px) {
-    
-    * {
-        overflow-x: hidden;
-    }
 
     /*=====NAV BAR=====*/
     .navbar {
@@ -527,6 +571,7 @@ p {
         width: 100vw;
         background-color: var(--grey);
         justify-content: space-between;
+        border-radius: 0px;
         padding: 10px 40px;
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.753);
         z-index: 100;
@@ -542,14 +587,14 @@ p {
 
     .personal {
         width: 100vw;
-        max-height: 70vw;
+        max-height: 60vw;
         background-color: var(--naranja);
     }
 
     .image-profile {
         background-image: url("./assets/personal.jpg");
         width: 100vw;
-        height: 70vw;
+        height: 60vw;
         background-repeat: no-repeat;
         background-position: 50%;
         background-position: top;
@@ -642,6 +687,10 @@ p {
         justify-content: center;
     }
 
+    .percentage {
+        top: -15px;
+    }
+
     /*=====EXP=====*/
 
     .experience {
@@ -680,6 +729,11 @@ p {
         justify-content: center;
     }
 
+    .hobbies_img {
+        width: 10vw;
+        height: 10vw;
+    }
+
     /*=====CONTACT=====*/
 
     .contact {
@@ -688,6 +742,163 @@ p {
     }
 }
 
-@media screen and (max-width: 768px) {
+/*=====MEDIA 850px=====*/
+@media screen and (max-width: 850px) {
 
+    /*=====GLOBAL=====*/
+    .card {
+        width: 38vw;
+        height: 20vw;
+    }
+
+    /*=====NAVBAR=====*/
+
+    .navbar {
+        align-items: center;
+    }
+
+    #check {
+        display: none;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    .navbar_items {
+        position: fixed;
+        width: 100vw;
+        background-color: var(--darkgrey);
+        top: 100px;
+        transition: all .5s;
+        left: -100%;
+        box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.753);
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 2rem;
+    }
+
+    #check:checked ~ .navbar_items {
+        left: 0;
+        display: block;
+    }
+
+    /*=====EXP=====*/
+
+    .experience_list {
+        max-width: 700px;
+    }
+} 
+
+/*=====MEDIA 600px=====*/
+@media screen and (max-width: 600px) {
+    /*=====GLOBAL=====*/
+    .card {
+        width: 38vw;
+        height: 25vw;
+    }
+
+    .section_title {
+        font-size: 4rem;
+    }
+
+    /*=====DATA=====*/
+    .main_title {
+        font-size: 6rem;
+    }
+}
+
+/*=====MEDIA 425px=====*/
+@media screen and (max-width: 425px) {
+
+    /*=====GLOBAL=====*/
+    .card {
+        width: 60vw;
+        height: 40vw;
+    }
+    .section_title {
+        font-size: 3rem;
+    }
+
+    /*=====DATA=====*/
+    .main_title {
+        font-size: 4rem;
+    }
+    /*=====STUDIES=====*/
+    .studies_card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*=====EXPERIENCE=====*/
+
+    .experience_list {
+        width: 250px;
+    }
+
+    .experience_item {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--white);
+    }
+
+    .experience_year {
+        width: auto;
+        border-right: none;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .experience_corp {
+        width: auto;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .experience_description {
+        width: auto;
+        text-align: center;
+    }
+
+    /*=====HOBBIES=====*/
+    .hobbies_card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hobbies_img {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    /*=====CONTACT=====*/
+
+    .field input {
+        max-width: 300px;
+    }
+
+    #message {
+        max-width: 300px;
+    }
+
+    .contact_data {
+        max-width: 300px;
+    }
+
+    .contact_rrss img {
+        width: 60px;
+        margin: 0 5px;
+        transition: 0.2s;
+    }
 }
