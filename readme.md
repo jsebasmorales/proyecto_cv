@@ -1,6 +1,6 @@
 <h1 align="center">Proyecto CV</h1>
 <h3 align="center">Como pryecto, cree un CV responsivo</h3>
-<p>Puedes acceder al proyecto, dando click acá: <a href="https://jsebasmorales.github.io/proyecto_clon_google/"><img src="./assets/pinterest.png" width="30" ></a></p>
+<p>Puedes acceder al proyecto, dando click acá: <a href="https://jsebasmorales.github.io/proyecto_cv/"><img src="./assets/favicon.png" width="30" ></a></p>
 <img src="./assets/screen_1.jpg" alt="Imagen proyecto CV" width="auto" />
 <img src="./assets/screen_2.jpg" alt="Imagen proyecto CV" width="auto" />
 
